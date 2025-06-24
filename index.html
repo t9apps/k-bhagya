@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Bhagya - Kerala Lottery Results</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            background: white;
+            border-radius: 15px;
+            padding: 40px 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .logo-section {
+            margin-bottom: 30px;
+        }
+
+        .logo-placeholder {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            border-radius: 25px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .app-title {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .disclaimer {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+            color: #856404;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .features-list {
+            list-style: none;
+        }
+
+        .features-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .features-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 12px;
+            color: #00b894;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-title {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .source-info {
+            background: #e8f4f8;
+            border-left: 4px solid #00b894;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .source-info strong {
+            color: #00b894;
+        }
+
+        .source-info a {
+            color: #0984e3;
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .source-info a:hover {
+            text-decoration: underline;
+        }
+
+        .important-notes {
+            background: #fff5f5;
+            border: 1px solid #feb2b2;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .important-notes h3 {
+            color: #e53e3e;
+            margin-bottom: 15px;
+        }
+
+        .important-notes ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        .important-notes li {
+            margin-bottom: 8px;
+        }
+
+        .download-section {
+            text-align: center;
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .footer {
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+        }
+
+        .contact-info a {
+            color: #ffeaa7;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .app-title {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            .header, .section, .download-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-section">
+                <div class="logo-placeholder">K</div>
+                <!-- Replace the above div with your actual logo:
+                <img src="your-logo.png" alt="K-Bhagya Logo" style="width: 120px; height: 120px; border-radius: 25px;">
+                -->
+            </div>
+            <h1 class="app-title">K-Bhagya</h1>
+            <p class="tagline">Stay updated with the latest Kerala lottery results</p>
+            
+            <div class="disclaimer">
+                <strong>Disclaimer:</strong> This app is NOT affiliated with, endorsed by, or representing any government entity. It only displays publicly available lottery results sourced from official government websites. Users must verify results with official government publications before taking action.
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="section">
+                <h2>About K-Bhagya</h2>
+                <p>K-Bhagya provides real-time updates and easy access to Kerala lottery results, archives, and more. Get the fastest and most reliable lottery information at your fingertips.</p>
+                
+                <div class="source-info">
+                    <strong>SOURCE OF INFORMATION:</strong><br>
+                    <a href="https://statelottery.kerala.gov.in/index.php/lottery-result-view" target="_blank">
+                        https://statelottery.kerala.gov.in/index.php/lottery-result-view
+                    </a>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Key Features</h2>
+                <ul class="features-list">
+                    <li>
+                        <span class="feature-title">Fastest Results:</span><br>
+                        Instant updates for all lottery draws
+                    </li>
+                    <li>
+                        <span class="feature-title">History & Archive:</span><br>
+                        Verify past results effortlessly
+                    </li>
+                    <li>
+                        <span class="feature-title">User-Friendly Interface:</span><br>
+                        Easy navigation for seamless experience
+                    </li>
+                    <li>
+                        <span class="feature-title">Notifications:</span><br>
+                        Stay notified of live results and bumper draws
+                    </li>
+                    <li>
+                        <span class="feature-title">Offline Access:</span><br>
+                        Save results for viewing anytime, anywhere
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="important-notes">
+            <h3>Important Notes</h3>
+            <ul>
+                <li>K-Bhagya only displays publicly available information and does not sell lottery tickets.</li>
+                <li>Predictions are provided for reference only and are not guaranteed to be accurate.</li>
+                <li>Users are advised to verify all results with official government sources before making any decisions.</li>
+            </ul>
+        </div>
+
+        <div class="download-section">
+            <h2>Download K-Bhagya</h2>
+            <p>Stay informed with lottery results at your fingertips!</p>
+            <br>
+            <a href="#" class="download-btn">Download from App Store</a>
+            <!-- Replace # with your actual App Store link when available -->
+        </div>
+
+        <div class="footer">
+            <h3>Support & Contact</h3>
+            <div class="contact-info">
+                <p>For support, feature requests, or feedback:</p>
+                <p>Email: <a href="mailto:mail@t9apps.com">mail@t9apps.com</a></p>
+                <!-- Replace with your actual contact email -->
+            </div>
+            <br>
+            <p>&copy; 2025 K-Bhagya. All rights reserved.</p>
+            <p>This app is an independent service and is not affiliated with any government entity.</p>
+        </div>
+    </div>
+</body>
+</html>
